@@ -153,4 +153,7 @@ def api_summary_view():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+        host = os.getenv("APP_HOST", "127.0.0.1")
+    port = int(os.getenv("PORT", os.getenv("APP_PORT", 8000)))
+    debug = os.getenv("DEBUG", "False").lower() == "true"
+    app.run(host=host, port=port, debug=debug)
