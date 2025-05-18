@@ -4,12 +4,14 @@ MINI-apka „Wydatki” – Dodaj + Wyczyść historię (lista Ostatnie wpisy).
 • Uruchom: python app.py
 """
 
-import sqlite3, os
-from flask import Flask, request, redirect, url_for, render_template_string
+import sqlite3
+import os
+from flask import Flask, request, redirect, url_for, render_template_string, jsonify
+from flask_cors import CORS
 
-DB = "expenses.db"
+DB = os.environ.get("DB_PATH", "expenses.db")
 app = Flask(__name__)
-
+CORS(app)
 # ---------- BAZA ----------
 def init_db():
     with sqlite3.connect(DB) as c:
@@ -118,5 +120,37 @@ def clear():
     return redirect(url_for("home"), code=303)
 
 # ---------- RUN ----------
+# ---------- API ----------
+
+@app.get("/api/expenses")
+def api_get_expenses():
+    rows = [dict(r) for r in list_expenses()]
+    return jsonify(rows)
+
+
+@app.post("/api/expenses")
+def api_add_expense():
+    data = request.get_json(silent=True) or {}
+    amount = data.get("amount")
+    category = (data.get("category") or "").strip()
+    note = (data.get("note") or "").strip()
+    if amount is None or not category:
+        return jsonify({"error": "bad request"}), 400
+    add_expense(float(amount), category, note)
+    return jsonify({"status": "ok"})
+
+
+@app.get("/api/summary")
+def api_summary_view():
+    tot, cats = summary()
+    data = {
+        "total": tot,
+        "by_category": [
+            {"category": c[0], "sum": c[1]} for c in cats
+        ],
+    }
+    return jsonify(data)
+
+
 if __name__ == "__main__":
     app.run(debug=True)

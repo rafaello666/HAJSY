@@ -1,0 +1,7 @@
+Instrukcja korzystania z aplikacji offline na telefonie
+-------------------------------------------------------
+1. Upewnij się, że aplikacja jest uruchomiona na komputerze lub serwerze.
+2. Na telefonie otwórz przeglądarkę i wpisz adres serwera, np. http://<IP-komputera>:3000
+3. Po załadowaniu strony dotknij opcji przeglądarki i wybierz „Dodaj do ekranu głównego”.
+4. Potwierdź dodanie. Na pulpicie pojawi się ikona aplikacji.
+5. Od teraz uruchamiaj aplikację z tej ikony. Ostatnio zapisane dane będą dostępne nawet bez połączenia z siecią.

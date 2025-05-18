@@ -197,10 +197,17 @@ Checklist:
  
  📨 Web Push: alert, gdy zbliżasz się do limitu budżetu
  
- PR-y mile widziane!
+### Testy
+W katalogu `tests/` znajdują się proste testy jednostkowe.
+Uruchom je poleceniem:
+```bash
+python -m pytest
+```
+
+PR-y mile widziane!
  
- 📝 Licencja
- Projekt udostępniany na licencji MIT – korzystaj, modyfikuj, dawaj znać o problemach.
+📝 Licencja
+Projekt udostępniany na licencji [MIT](LICENSE) – korzystaj, modyfikuj, dawaj znać o problemach.
  
  Miłego ogarniania hajsu!
 Jeśli pojawią się pytania lub pomysły na usprawnienia – otwórz issue lub skontaktuj się bezpośrednio.
