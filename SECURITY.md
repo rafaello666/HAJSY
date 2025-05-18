@@ -31,3 +31,4 @@ Niniejszy dokument opisuje podstawowe zasady bezpieczeństwa w aplikacji Mobile-
 - Po otrzymaniu zgłoszenia, potwierdzimy jego odbiór i poinformujemy o planowanych działaniach.
 - Zobowiązujemy się do szybkiego reagowania oraz udostępnienia informacji o wdrożonych poprawkach (bez ujawniania szczegółów, które mogłyby narażać użytkowników).
 - Dziękujemy za pomoc w utrzymaniu wysokich standardów bezpieczeństwa i zachęcamy do odpowiedzialnego ujawniania zagrożeń.
+# SECURITY.md

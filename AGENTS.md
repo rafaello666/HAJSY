@@ -49,3 +49,4 @@
   - Nawigacja i układ treści są dostosowane do mniejszych ekranów.
   - Tryb offline (PWA) działa poprawnie, umożliwiając korzystanie z aplikacji bez stałego połączenia z Internetem.
 
+# AGENTS.md
