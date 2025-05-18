@@ -1,0 +1,62 @@
+/* -------------------------------------------
+   Mobile-first, lekka skórka dla aplikacji
+   „Moje wydatki” – Bootstrap pomaga z układem,
+   a poniżej tylko drobne poprawki UX/UI.
+-------------------------------------------- */
+
+/* 1. Ogólne odcienie i czytelność */
+body {
+    background: #f8f9fa;        /* delikatna szarość zamiast czystej bieli */
+    color: #212529;
+    font-size: 1rem;             /* czytelna baza – 16 px */
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* 2. Formularz dodawania wydatku */
+  #form input {
+    font-size: 1rem;
+  }
+  
+  /* Pogrubienie placeholdera „Kwota”, by od razu rzucała się w oczy */
+  #amount::placeholder {
+    font-weight: 600;
+  }
+  
+  /* Większy przycisk „Dodaj” – wygodne z telefonu */
+  #form button {
+    font-size: 1.1rem;
+    padding: 0.75rem;
+  }
+  
+  /* 3. Lista wydatków */
+  .list-group-item {
+    line-height: 1.4;
+    padding: .5rem .75rem;
+  }
+  
+  /* Naprzemienne tło (subtelne) ułatwia skanowanie listy */
+  .list-group-item:nth-child(odd) {
+    background: #ffffff;
+  }
+  .list-group-item:nth-child(even) {
+    background: #f1f3f5;
+  }
+  
+  /* 4. Podsumowanie kategorii */
+  #cat-list li {
+    margin-bottom: .25rem;
+  }
+  
+  /* 5. Dark Mode (jeśli system włączony) */
+  @media (prefers-color-scheme: dark) {
+    body { background: #121212; color: #e9ecef; }
+    .list-group-item:nth-child(odd) { background: #1e1e1e; }
+    .list-group-item:nth-child(even) { background: #262626; }
+    hr { border-color: #343a40; }
+  }
+  
+  /* 6. PWA – gdy zainstalowana jako pełnoekranowa: mały odstęp od górnej krawędzi */
+  @media (display-mode: standalone) {
+    body { padding-top: 0.75rem; }
+  }
+  
