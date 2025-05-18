@@ -85,12 +85,6 @@ Checklist:
 <input disabled="" type="checkbox"> Czy aplikacja jest gotowa do instalacji jako PWA?
 <input disabled="" type="checkbox"> Czy interfejs jest responsywny i przyjazny w dotykowej obsłudze?
 <input disabled="" type="checkbox"> Czy wykryto i rozwiązano problemy z wydajnością na urządzeniach mobilnych?
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
-diff --git a/README.md b/README.md
-index c9025a0..4b4c59b 100644
---- a/README.md
-+++ b/README.md
-@@ -21,131 +21,119 @@ Lekka aplikacja **web + PWA** pozwalająca z telefonu lub komputera:
  | **Offline-First** (cache-first + stale-while-revalidate) | Prosty plik DB – brak zewnętrznego silnika |
  | Tryb ciemny ⬛/⬜ (adapt. CSS) | CORS dla SPA / lokalnego dev |
  
@@ -116,10 +110,6 @@ index c9025a0..4b4c59b 100644
  │ └── icon-512.png
  └── README.md # <— ten plik
  
--yaml
--Kopiuj
--Edytuj
--
  ---
  
  ## 🚀 Szybki start (tryb deweloperski)
@@ -131,25 +121,18 @@ index c9025a0..4b4c59b 100644
  python -m venv venv && source venv/bin/activate   # Windows -> venv\Scripts\activate
  pip install -r requirements.txt
  python app.py            # API rusza na http://localhost:8000/
--2. Frontend – statyczny serwer
--bash
--Kopiuj
--Edytuj
-+```
-+### 2. Frontend – statyczny serwer
-+```bash
+```
+### 2. Frontend – statyczny serwer
+```bash
  cd ../frontend
  python -m http.server 3000        # lub inny prosty serwer statyczny
  # Otwórz w przeglądarce: http://localhost:3000
  Telefon w tej samej sieci Wi-Fi?
  Wejdź na http://<IP-Twojego-komputera>:3000 i dodaj aplikację “Do ekranu głównego”.
-+```
+```
  
  🐳 Uruchomienie produkcyjne (Docker Compose)
--yaml
--Kopiuj
--Edytuj
-+```yaml
+```yaml
  # docker-compose.yml (przykład)
  version: "3"
  
@@ -163,13 +146,10 @@ index c9025a0..4b4c59b 100644
      volumes:
        - ./frontend:/usr/share/nginx/html:ro
      ports: ["80:80"]
--bash
--Kopiuj
--Edytuj
-+```
-+```bash
+```
+```bash
  docker compose up --build
-+```
+```
  Backend działa na :8000, pliki statyczne serwuje Nginx na :80.
  
  🔌 API reference
@@ -217,20 +197,11 @@ index c9025a0..4b4c59b 100644
  
  📨 Web Push: alert, gdy zbliżasz się do limitu budżetu
  
--☁️ Deploy GitHub → Railway/Render (CI CD)
--
--🏷️ OCR paragonu (Tesseract JS) dla ekspresowego dodawania wydatku ze zdjęcia
--
--🗄️ Eksport CSV/XLSX (endpoint /export)
--
  PR-y mile widziane!
  
  📝 Licencja
  Projekt udostępniany na licencji MIT – korzystaj, modyfikuj, dawaj znać o problemach.
  
  Miłego ogarniania hajsu!
--Jeśli pojawią się pytania lub pomysły na usprawnienia – otwórz issue lub skontaktuj się bezpośrednio.
-+Jeśli pojawią się pytania lub pomysły na usprawnienia – otwórz issue lub skontaktuj się bezpośrednio.
+Jeśli pojawią się pytania lub pomysły na usprawnienia – otwórz issue lub skontaktuj się bezpośrednio.
  
-EOF
-)
