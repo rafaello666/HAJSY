@@ -13,7 +13,7 @@ const PRECACHE_ASSETS = [
   '/manifest.webmanifest',
   '/icons/icon-192.png', // przykładowe ikony w manifest.json
   '/icons/icon-512.png',
-  // Bootstrap CSS & JS z CDN – zamiast precache, pobierzemy “on-install”
+  '/offline.html',
   'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css',
 ];
 
